@@ -1,20 +1,17 @@
 function recorridoInorden(raiz) {
-  // Caso Base: Nodo vacío [cite: 109]
   if (raiz === null) return [];
-  // Izquierdo -> Raíz -> Derecho [cite: 101, 102, 103]
+  // Izquierdo -> Raíz -> Derecho
   return [...recorridoInorden(raiz.izquierdo), raiz.valor, ...recorridoInorden(raiz.derecho)];
 }
 
 function recorridoPreorden(raiz) {
-  // Caso Base: Nodo vacío [cite: 112]
   if (raiz === null) return [];
-  // Raíz -> Izquierdo -> Derecho [cite: 99, 100]
+  // Raíz -> Izquierdo -> Derecho 
   return [raiz.valor, ...recorridoPreorden(raiz.izquierdo), ...recorridoPreorden(raiz.derecho)];
 }
 
 function recorridoPostorden(raiz) {
-  // Caso Base: Nodo vacío [cite: 115]
   if (raiz === null) return [];
-  // Izquierdo -> Derecho -> Raíz [cite: 104, 105]
+  // Izquierdo -> Derecho -> Raíz 
   return [...recorridoPostorden(raiz.izquierdo), ...recorridoPostorden(raiz.derecho), raiz.valor];
 }

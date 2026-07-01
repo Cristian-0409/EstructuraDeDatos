@@ -1,19 +1,13 @@
 function busquedaBinariaRecursiva(arr, objetivo, bajo, alto) {
-  // Caso Base 1: El rango de búsqueda es inválido (el elemento no existe) [cite: 74]
   if (bajo > alto) return -1;
-  
-  // Calcular el punto medio entero [cite: 73, 75]
+
   let medio = Math.floor((bajo + alto) / 2);
-  
-  // Caso Base 2: El elemento del medio es el objetivo buscado [cite: 76]
+
   if (arr[medio] === objetivo) return medio;
   
-  // Casos Recursivos: Reducir el espacio de búsqueda [cite: 77]
   if (arr[medio] > objetivo) {
-    // Buscar en la mitad izquierda
     return busquedaBinariaRecursiva(arr, objetivo, bajo, medio - 1);
   } else {
-    // Buscar en la mitad derecha
     return busquedaBinariaRecursiva(arr, objetivo, medio + 1, alto);
   }
 }
